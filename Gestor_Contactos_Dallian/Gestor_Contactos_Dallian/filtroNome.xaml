@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gestor_Contactos_Dallian.filtroNome"
+             BackgroundColor="Black"
+             >
+
+
+    <StackLayout BackgroundColor="Black">
+        <Label Text="Escolha a categoria"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="Goldenrod"
+               FontSize="50"
+               Margin="0,20,0,0"
+               FontFamily="Sacramento-Regular.ttf#Sacramento"
+               />
+
+        <Label Text="Filtrando por nome"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="IndianRed"
+               FontSize="20"
+               Margin="0,0,0,0"
+               
+               />
+
+        <Image Source="abc_gold" HeightRequest="80" VerticalOptions="Center" Margin="0,20,0,0"/>
+
+
+        <Button Text="Festival"
+                Image="festival"
+                Margin="0,30,0,0"
+                FontSize="20"
+                ContentLayout="Left,5" 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="300"
+                VerticalOptions="Center"
+                BackgroundColor="Goldenrod"
+                HeightRequest="50"
+                Clicked="ftNomeFestival"
+                />
+
+        <Button Text="Promotores"
+                Image="promotora"
+                Margin="0,20,0,0"
+                FontSize="20"
+                ContentLayout="Left,5" 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="300"
+                VerticalOptions="Center"
+                BackgroundColor="Goldenrod"
+                HeightRequest="50"
+                Clicked="ftNomePromotora"  
+                />
+
+        <Button Text="Locais"
+                Image="local"
+                Margin="0,20,0,0"
+                FontSize="20"
+                ContentLayout="Left,5" 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="300"
+                VerticalOptions="Center"
+                BackgroundColor="Goldenrod"
+                HeightRequest="50"
+                 Clicked="ftNomeLocal"     
+                />
+
+
+        <Button Text="Voltar"
+                Image="arrow_left"
+                Margin="0,20,0,0"
+                FontSize="20"
+                ContentLayout="Left,5" 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="300"
+                VerticalOptions="Center"
+                BackgroundColor="Goldenrod"
+                HeightRequest="50"
+                   Clicked="fechar"  
+                />
+
+
+    </StackLayout>
+
+
+</ContentPage>

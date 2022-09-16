@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local2="clr-namespace:Gestor_Contactos_Dallian"
+             xmlns:local="clr-namespace:Gestor_Contactos_Dallian.ViewModel"
+             x:Class="Gestor_Contactos_Dallian.AddFestival"
+             
+             >
+
+
+
+    <ContentPage.BindingContext>
+        <local:PaisViewModel></local:PaisViewModel>
+    </ContentPage.BindingContext>
+
+    <StackLayout BackgroundColor="Black">
+        
+        
+        <Label Text="Adicionar Festival"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="Goldenrod"
+               FontSize="50"
+               Margin="0,20,0,0"
+               FontFamily="Sacramento-Regular.ttf#Sacramento"
+               />
+
+        <Label/>
+
+
+        <local2:MyEntry x:Name="etName"
+                        Margin="0,0,0,0"
+                        Keyboard="Text" 
+                        Placeholder="Nome do Festival "
+                        PlaceholderColor="Goldenrod" 
+                        ReturnType="Next" 
+                        ClearButtonVisibility="WhileEditing" 
+                        TextColor="Goldenrod"/>
+
+        <local2:MyPicker Margin="0,20,0,0"
+                ItemDisplayBinding="{Binding Nome}"
+                x:Name="etPais" 
+                Title="Escolher o país"
+                TitleColor="Goldenrod"
+                ItemsSource="{Binding ListaPaises}"
+                TextColor="Goldenrod"       
+                />
+
+        <local2:MyEntry x:Name="etMorada"
+                        Margin="0,20,0,0"
+                        Keyboard="Text" 
+                        Placeholder="Morada"
+                        PlaceholderColor="Goldenrod" 
+                        ReturnType="Next" 
+                        ClearButtonVisibility="WhileEditing" 
+                        TextColor="Goldenrod"/>
+
+        <local2:MyEntry x:Name="etContacto"
+                        Margin="0,20,0,0"
+                        Keyboard="Telephone" 
+                        Placeholder="Contacto"
+                        PlaceholderColor="Goldenrod" 
+                        ReturnType="Next"  
+                        ClearButtonVisibility="WhileEditing" 
+                        TextColor="Goldenrod"/>
+        
+
+        <local2:MyEntry x:Name="etResponsavel"
+                        Margin="0,20,0,0"
+                        Keyboard="Text" 
+                        Placeholder="Nome do Responsável"
+                        PlaceholderColor="Goldenrod" 
+                        ReturnType="Next" 
+                        ClearButtonVisibility="WhileEditing" 
+                        TextColor="Goldenrod"/>
+
+     
+
+        <Button Image="plus_icon"
+                Text="Adicionar"
+                     x:Name="btAdd"
+                    Margin="0,20,0,0"
+                    FontSize="20"
+                    ContentLayout="Left" 
+                    HorizontalOptions="CenterAndExpand" 
+                    WidthRequest="300"
+                    VerticalOptions="Center"
+                    BackgroundColor="Goldenrod"
+                     Clicked="adicionar"
+                />
+
+        <Button Image="delete"
+                Text="Apagar"
+                     x:Name="btClean"
+                    Margin="0,0,0,0"
+                    FontSize="20"
+                    ContentLayout="Left" 
+                    HorizontalOptions="CenterAndExpand" 
+                    WidthRequest="300"
+                    VerticalOptions="Center"
+                    BackgroundColor="Goldenrod"
+                    Clicked="apagar"
+                />
+
+        <Button Image="arrow_left"
+                Text="Voltar"
+                     x:Name="btClose"
+                    Margin="0,0,0,0"
+                    FontSize="20"
+                    ContentLayout="Left" 
+                    HorizontalOptions="CenterAndExpand" 
+                    WidthRequest="300"
+                    VerticalOptions="Center"
+                    BackgroundColor="Goldenrod"
+                    Clicked="fechar"
+                />
+
+    </StackLayout>
+
+
+</ContentPage>

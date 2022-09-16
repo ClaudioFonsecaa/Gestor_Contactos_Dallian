@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gestor_Contactos_Dallian.ftNomeP" BackgroundColor="Black">
+
+
+
+
+    <StackLayout>
+        <SearchBar Placeholder="Procurar por nome"
+                   TextChanged="SearchBar_TextChanged"
+                   TextColor="Black"
+                   PlaceholderColor="Black"
+                   BackgroundColor="Goldenrod"
+                   />
+
+
+        <Label                     Text="Promotores"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="Goldenrod"
+                                   FontSize="50"
+                                   Margin="0,0,0,0"
+                                   FontFamily="Sacramento-Regular.ttf#Sacramento"
+                                   />
+
+
+        <CollectionView x:Name="PromotorCollectionView"  SelectionMode="Single" Margin="0,5,0,0" BackgroundColor="Black">
+
+            <CollectionView.EmptyView>
+                <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand">
+                    <Label
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                TextColor="Goldenrod"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                VerticalOptions="CenterAndExpand"
+                                Text="Sem items para mostrar :(" />
+                </StackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+
+
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+
+
+                                <SwipeItem 
+                                           BackgroundColor="LightPink"
+                                           IconImageSource="delete"
+                                           CommandParameter="{Binding .}"
+                                    Invoked="apagar"
+                                           />
+
+                                <SwipeItem 
+                                           BackgroundColor="LightGreen"
+                                           IconImageSource="eye"
+                                           CommandParameter="{Binding .}"
+                                    Invoked="ver"
+                                           />
+
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Frame OutlineColor="Goldenrod" BackgroundColor="Black" Padding="0">
+                            <Grid RowSpacing="0" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+
+
+                                <Label Text="{Binding Id}"
+                                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand" 
+                                       TextColor="Goldenrod"
+                                        FontSize="15"/>
+
+                                <Label Text="{Binding Name}"
+                                       Grid.Row="0" Grid.Column="1"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontAttributes="Bold"
+                                       FontSize="30"
+                                       TextColor="Goldenrod"
+                                   />
+
+                                <Label Text="{Binding Pais}"
+                                       Grid.Row="1" Grid.Column="1"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontAttributes="Bold"
+                                       FontSize="15"
+                                       TextColor="Goldenrod"
+                                   />
+
+                                <!-- Por aqui flags -->
+                                <!--
+                            
+                                <local2:MyPicker Margin="0,30,0,0"
+                                ItemDisplayBinding="{Binding Name}"
+                                x:Name="etPais" 
+                                Title="Escolher o país"
+                                TitleColor="Goldenrod"
+                                ItemsSource="{Binding ListaPaises}"
+                                TextColor="Goldenrod"       
+                                />
+                            
+                           
+
+                            <Image Source="{Binding Pais_Clean}"  
+                                   Grid.Row="0" 
+                                   Grid.Column="2" 
+                                   Grid.RowSpan="2"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   />
+
+                            -->
+
+
+                            </Grid>
+                        </Frame>
+
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <ImageButton Source="arrow_left"
+                     x:Name="btClose"
+                    BackgroundColor="Goldenrod"
+                    HeightRequest="50"
+                     Clicked="fechar"
+                />
+
+
+    </StackLayout>
+
+
+
+</ContentPage>

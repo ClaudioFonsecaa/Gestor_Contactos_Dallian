@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gestor_Contactos_Dallian.verConteudo" BackgroundColor="Black">
+
+
+
+                               
+
+
+    <CollectionView x:Name="DataView">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+
+
+            
+    <StackLayout>
+        
+     
+        <Frame OutlineColor="Goldenrod" BackgroundColor="Transparent" Padding="0" Margin="10">
+            <StackLayout>
+
+                <Grid>
+
+                                                <Grid.RowDefinitions>
+                                                    <!-- * se sobrar preenche o espaço -->
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Text="Detalhes"
+                                               Grid.Row="0"
+                                               Grid.Column="0"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               VerticalOptions="Center" 
+                                               HorizontalOptions="Center"
+                                               TextColor="Goldenrod"
+                                               FontSize="50"
+                                               Margin="0,20,0,0"
+                                               FontFamily="Sacramento-Regular.ttf#Sacramento"/>
+
+
+
+                                                <ImageButton Source="pencil_gold"
+                                               Grid.Column="1"
+                                               Margin="0,10,0,0"
+                                               Grid.Row="0"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Start"
+                                               BackgroundColor="Transparent"
+                                               Clicked="editar" 
+                                               CommandParameter="{Binding .}"
+                                               />
+
+
+
+                                                <ImageButton Source="delete_gold"
+                                               Grid.Column="1"
+                                               Grid.Row="0"
+                                               Margin="0,50,15,0"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Start"
+                                               BackgroundColor="Transparent"
+                                               Clicked="apagar"
+                                               CommandParameter="{Binding .}"
+                                               />
+
+                                            </Grid>
+
+                
+                
+
+
+                                            <StackLayout Orientation="Horizontal" Margin="20,10,0,0">
+
+                                                <Label Text="Nome:"
+                                                   FontAttributes="Bold,Italic"
+                                                   FontSize="20"
+                                                   HorizontalTextAlignment="Start"
+                                                   VerticalTextAlignment="Center"
+                                                   TextColor="Goldenrod"
+                                               />
+
+                                                <Label 
+                                                       x:Name="db_name"
+                                                       FontAttributes="Bold,Italic"
+                                                       FontSize="20"
+                                                       TextColor="White"
+                                                        Text="{Binding Name}"
+                                             />
+
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal" Margin="20,10,0,0">
+
+                                                <Label Text="Morada:"
+                                                       FontAttributes="Bold,Italic"
+                                                       FontSize="20"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalTextAlignment="Center"
+                                                       TextColor="Goldenrod"
+               
+                                                 />
+
+                                                <Label 
+                                                       x:Name="db_morada"
+                                                   FontAttributes="Bold,Italic"
+                                                   FontSize="10"
+                                                    HorizontalTextAlignment="Center"
+                                                    VerticalTextAlignment="Center"
+                                                   TextColor="White"
+                                                    Text="{Binding Morada}"
+                                                />
+
+                                            </StackLayout>
+
+
+                                            <StackLayout Orientation="Horizontal" Margin="20,10,0,0">
+
+                                                <Label Text="País:"
+                                                       FontAttributes="Bold,Italic"
+                                                       FontSize="20"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalTextAlignment="Center"
+                                                       TextColor="Goldenrod"
+                                                 />
+
+                                                <Label x:Name="db_pais"
+                                                       FontAttributes="Bold,Italic"
+                                                       FontSize="20"
+                                                       TextColor="White"
+                                                       Text="{Binding Pais}"
+                                                />
+
+                                            </StackLayout>
+
+
+                                            <StackLayout Orientation="Horizontal" Margin="20,10,0,0">
+                                                <!-- Contacto , carregar para ir para chamada -->
+                                                <Label Text="Contacto:"
+                                                       FontAttributes="Bold,Italic"
+                                                       FontSize="20"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalTextAlignment="Center"
+                                                       TextColor="Goldenrod"
+               
+                                                 />
+
+                                                    <Label>
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Contacto}" 
+                                                                        x:Name="db_contacto"
+                                                                          FontAttributes="Bold,Italic"
+                                                                          FontSize="20"
+                                                                        TextColor="LightBlue"
+                                                                        TextDecorations="Underline">
+
+                                                                <!-- Reconhecer o evento de tocar no texto -->
+                                                                <Span.GestureRecognizers>
+                                                                    <TapGestureRecognizer Tapped="redirecionar_contacto"/>
+                                                                </Span.GestureRecognizers>
+
+                                                                </Span>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                
+                                            </Label>
+                                                       
+                                                        
+                                            </StackLayout>
+
+
+                                            <StackLayout Orientation="Horizontal" Margin="20,10,0,30">
+
+                                                <Label Text="Nome do Responsável:"
+                                                           FontAttributes="Bold,Italic"
+                                                           FontSize="15"
+                                                           HorizontalTextAlignment="Start"
+                                                           VerticalTextAlignment="Center"
+                                                           TextColor="Goldenrod"
+               
+                                                     />
+
+                                                <Label x:Name="db_responsavel"
+                                                           FontAttributes="Bold,Italic"
+                                                           FontSize="20"
+                                                           TextColor="White"
+                                                            Text="{Binding Responsavel}"
+                                                     />
+
+                                            </StackLayout>
+
+
+
+            </StackLayout>
+                        
+        </Frame>
+
+                    <!-- Acrescentar aqui o mapa -->
+                    
+
+                        <ImageButton Source="map"
+                                     Clicked="redirecionar_mapa"
+                                     HeightRequest="300"
+                                     BackgroundColor="Transparent"
+                                    />  
+
+                   
+        
+                    <ImageButton Source="arrow_left"
+                                 Margin="0,60,0,0"
+                    BackgroundColor="Goldenrod"
+                    HeightRequest="50" 
+                    Clicked="fechar"
+                    />
+
+
+    </StackLayout>
+
+
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+
+
+
+</ContentPage>

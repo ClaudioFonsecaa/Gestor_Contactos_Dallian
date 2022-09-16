@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gestor_Contactos_Dallian.HomePage">
+
+
+    <StackLayout BackgroundColor="Black">
+        <Label Text="Design by: Cláudio Correia - 2022" TextColor="Goldenrod"/>
+
+        <Label Text="Gestor de Contactos"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="Goldenrod"
+               FontSize="60"
+               Margin="0,0,0,0"
+               FontFamily="Sacramento-Regular.ttf#Sacramento"
+               />
+
+        <Image Source="applogo"
+               HeightRequest="100"
+               Margin="0,0,0,0"
+               />
+        
+        <Image Source="dallian"
+                Margin="0,0,0,0"
+               />
+
+        
+
+    </StackLayout>
+    
+
+
+</ContentPage>

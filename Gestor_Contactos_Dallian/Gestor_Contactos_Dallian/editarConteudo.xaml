@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gestor_Contactos_Dallian.editarConteudo" BackgroundColor="Black"
+             xmlns:local2="clr-namespace:Gestor_Contactos_Dallian"
+             xmlns:local="clr-namespace:Gestor_Contactos_Dallian.ViewModel"
+             >
+
+
+    <ContentPage.BindingContext>
+        <local:PaisViewModel></local:PaisViewModel>
+    </ContentPage.BindingContext>
+
+
+    <StackLayout>
+        
+                    <Frame OutlineColor="Goldenrod" BackgroundColor="Transparent" Padding="0" Margin="10">
+                        <StackLayout>
+
+                            <Grid>
+
+                                <Grid.RowDefinitions>
+                                    <!-- * se sobrar preenche o espaço -->
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Editar"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               VerticalOptions="Center" 
+                               HorizontalOptions="Center"
+                               TextColor="Goldenrod"
+                               FontSize="50"
+                               Margin="0,30,0,0"
+                               FontFamily="Sacramento-Regular.ttf#Sacramento"/>
+
+
+                                <ImageButton Source="certo_gold"
+                               Grid.Column="1"
+                               Margin="0,20,20,0"
+                               Grid.Row="0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               BackgroundColor="Transparent"
+                                 Clicked="concluido"         
+                               />
+
+
+                            </Grid>
+
+                            <local2:MyEntry 
+                                    x:Name="db_nomeET" 
+                                    Margin="0,40,0,0"
+                                    Keyboard="Text" 
+                                    Placeholder="Nome do Festival "
+                                    PlaceholderColor="Goldenrod" 
+                                    ReturnType="Next" 
+                                    ClearButtonVisibility="WhileEditing" 
+                                    TextColor="Goldenrod"
+                                />
+
+
+                               
+
+                            <local2:MyPicker 
+                                Margin="0,30,0,0"
+                                ItemDisplayBinding="{Binding Nome}"
+                                x:Name="db_paisET" 
+                                TitleColor="Goldenrod"
+                                ItemsSource="{Binding ListaPaises}"
+                                TextColor="Goldenrod"       
+                                />  
+
+
+                <local2:MyEntry 
+                                    x:Name="db_moradaET" 
+                                    Margin="0,30,0,0"
+                                    Keyboard="Text" 
+                                    Placeholder="Morada"
+                                    PlaceholderColor="Goldenrod" 
+                                    ReturnType="Next" 
+                                    ClearButtonVisibility="WhileEditing" 
+                                    TextColor="Goldenrod"/>
+
+                            <local2:MyEntry 
+                                    x:Name="db_contactoET" 
+                                    Margin="0,30,0,0"
+                                    Keyboard="Telephone" 
+                                    Placeholder="Contacto"
+                                    PlaceholderColor="Goldenrod" 
+                                    ReturnType="Next"  
+                                    ClearButtonVisibility="WhileEditing" 
+                                    TextColor="Goldenrod"/>
+
+
+                            <local2:MyEntry 
+                                    x:Name="db_responsavelET" 
+                                    Margin="0,30,0,30"
+                                    Keyboard="Text" 
+                                    Placeholder="Nome do Responsável"
+                                    PlaceholderColor="Goldenrod" 
+                                    ReturnType="Next" 
+                                    ClearButtonVisibility="WhileEditing" 
+                                    TextColor="Goldenrod"/>
+
+
+                        </StackLayout>
+                    </Frame>
+
+
+
+                    <Button Image="certo"
+                            Text="Concluido"
+                                 x:Name="btClean"
+                                Margin="0,30,0,0"
+                                FontSize="20"
+                                ContentLayout="Left" 
+                                HorizontalOptions="CenterAndExpand" 
+                                WidthRequest="300"
+                                VerticalOptions="Center"
+                                BackgroundColor="Goldenrod"
+                                Clicked="concluido"
+                             
+                            />
+
+                    <Button Image="arrow_left"
+                            Text="Voltar"
+                                 x:Name="btClose"
+                                Margin="0,0,0,0"
+                                FontSize="20"
+                                ContentLayout="Left" 
+                                HorizontalOptions="CenterAndExpand" 
+                                WidthRequest="300"
+                                VerticalOptions="Center"
+                                BackgroundColor="Goldenrod"
+                                Clicked="fechar"
+                            />
+
+
+                </StackLayout>
+
+
+
+</ContentPage>

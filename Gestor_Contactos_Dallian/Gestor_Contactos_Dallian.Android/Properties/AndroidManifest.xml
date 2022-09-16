@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.app.Gestor_Contactos_Dallian" android:installLocation="preferExternal">
+	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="32" />
+	<application android:label="Gestor Contactos Dallian" android:theme="@style/MainTheme" android:icon="@mipmap/icon_launcher"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.DIAL" />
+			<data android:scheme="tel" />
+		</intent>
+	</queries>
+</manifest>
