@@ -7,4 +7,4 @@ Gestor de contactos para uma banda , onde podem adicionar festival,
 local ou promotora e podem procurar por cada um por nome ou país.
 Podem ainda ver os contactos e elimina-los ou edita-los.
 
-![](blob/master/Gestor_Contactos_Dallian/app1.PNG)
+![](master/Gestor_Contactos_Dallian/app1.PNG)
