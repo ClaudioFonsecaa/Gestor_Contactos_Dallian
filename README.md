@@ -8,3 +8,11 @@ local ou promotora e podem procurar por cada um por nome ou país.
 Podem ainda ver os contactos e elimina-los ou edita-los.
 
 <img src="Gestor_Contactos_Dallian/app1.PNG">
+
+<img src="Gestor_Contactos_Dallian/app2.PNG">
+
+<img src="Gestor_Contactos_Dallian/app2.1.PNG">
+
+<img src="Gestor_Contactos_Dallian/app3.PNG">
+
+<img src="Gestor_Contactos_Dallian/app4.PNG">
